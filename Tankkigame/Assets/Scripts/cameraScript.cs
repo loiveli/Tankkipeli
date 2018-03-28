@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class cameraScript : MonoBehaviour {
-
+	List<GameObject> palyers = new List<GameObject>();
+	public GameObject ctrl;
 	public GameObject player;
 	private Vector3 offset;
 	// Use this for initialization
@@ -12,11 +13,12 @@ public class cameraScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void LateUpdate () {
-		if(!player.GetComponent<TankkiMove>().moving){
-			transform.position = Vector3.MoveTowards(transform.position, player.transform.position+ offset, 0.05f) ;
-		}
+	void FixedUpdate () {
+		//if(!player.GetComponent<TankkiMove>().moving){
+			palyers = ctrl.GetComponent<TurnControl>().pelaajat;
+			transform.position =Vector3.Lerp(transform.position,palyers[0].transform.position +offset, 0.05f)  ;
+		//}
 		
-		
-	}
+		//transform.position = player.transform.position+offset;
+	}	
 }

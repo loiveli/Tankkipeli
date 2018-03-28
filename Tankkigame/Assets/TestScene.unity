@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7caf94f75c8048c4291f6ebf0048c123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ctrl: {fileID: 1261787260}
   player: {fileID: 302873510}
 --- !u!20 &519420031
 Camera:
@@ -247,6 +248,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1979464322}
+  - {fileID: 1261787261}
   - {fileID: 302873511}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -288,15 +290,62 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4920963589663932, guid: 743357bf52f097341ae0b3d8193d7c68, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1155970019307442, guid: 743357bf52f097341ae0b3d8193d7c68, type: 2}
-      propertyPath: m_TagString
-      value: Player
+    - target: {fileID: 114762449907850870, guid: 743357bf52f097341ae0b3d8193d7c68,
+        type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1261787260}
+    - target: {fileID: 114762449907850870, guid: 743357bf52f097341ae0b3d8193d7c68,
+        type: 2}
+      propertyPath: playerNum
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 743357bf52f097341ae0b3d8193d7c68, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1261787260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1261787261}
+  - component: {fileID: 1261787262}
+  m_Layer: 0
+  m_Name: ControlObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1261787261
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1261787260}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 568190073}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1261787262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1261787260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f608d2f9448e554b83ff71bb5e932c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pelaajat: []
 --- !u!1001 &1663519846
 Prefab:
   m_ObjectHideFlags: 0

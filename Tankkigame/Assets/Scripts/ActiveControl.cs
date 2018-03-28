@@ -12,8 +12,13 @@ public class ActiveControl : MonoBehaviour {
 		Tankki = GameObject.FindWithTag("Player");
 	}
 	void FixedUpdate () {
-		
-			gameObject.GetComponent<SpriteRenderer>().enabled = !Tankki.GetComponent<TankkiMove>().moving;
+
+			
+			gameObject.GetComponent<SpriteRenderer>().enabled = Tankki.GetComponent<TankkiMove>().boxActive;
+			if(!Tankki.GetComponent<TankkiMove>().boxActive){
+				Destroy(gameObject);
+			}
+			
 			
 	}
 }
