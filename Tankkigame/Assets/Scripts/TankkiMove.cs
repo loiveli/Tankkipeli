@@ -100,14 +100,15 @@ public class TankkiMove : MonoBehaviour
         }
 
     }
-    void TankkiLiike(Vector3 target, float speed)
+    IEnumerator TankkiLiike(Vector3 target, float speed)
     {
-
+        while(transform.position !=target){
         transform.position = Vector3.MoveTowards(transform.position, target, speed);
         dir = movePos - transform.position;
         angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-
+        yield return new WaitForSeconds(1f);
+        }
 
     }
     bool checkAmmo(Vector3 tankPos){
